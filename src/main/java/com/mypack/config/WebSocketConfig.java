@@ -22,8 +22,9 @@ public class WebSocketConfig  implements WebSocketMessageBrokerConfigurer {
 
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
-        registry.addEndpoint("/chat")//connection establishment
-                .setAllowedOrigins("http://localhost:5173")
+        registry.addEndpoint("/chat")
+                // यहाँ आपके नए रेंडर फ्रंटएंड का लिंक आएगा और साथ ही लोकलहोस्ट भी रहेगा ताकि आप लैपटॉप पर भी टेस्ट कर सकें
+                .setAllowedOrigins("https://my-chat-frontend-0ltj.onrender.com", "http://localhost:5173")
                 .withSockJS();
     }
     // /chat endpoint par connection apkaa establish hoga..
